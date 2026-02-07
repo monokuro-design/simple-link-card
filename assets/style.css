@@ -1,0 +1,206 @@
+/**
+ * Simple Link Card - フロントエンドスタイル
+ *
+ * @package Simple_Link_Card
+ */
+
+:root {
+    --slc-card-bg: #ffffff;
+    --slc-card-border: #dddddd;
+    --slc-card-border-hover: #999999;
+    --slc-title-color: #000000;
+    --slc-desc-color: #333333;
+    --slc-site-color: #666666;
+    --slc-border-radius: 8px;
+    --slc-transition: border-color 0.2s ease;
+}
+
+.wp-block-simple-link-card {
+    position: relative;
+}
+
+/**
+ * カードコンテナ
+ */
+.slc-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: var(--slc-card-bg);
+    border: 1px solid var(--slc-card-border);
+    border-radius: var(--slc-border-radius);
+    overflow: hidden;
+    text-decoration: none;
+    transition: var(--slc-transition);
+    max-width: 100%;
+}
+
+.slc-card:hover {
+    border-color: var(--slc-card-border-hover);
+}
+
+.slc-card:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/**
+ * カード画像
+ */
+.slc-card__image {
+    flex: 0 0 220px;
+    width: 220px;
+    height: auto;
+    max-height: 160px;
+    align-self: stretch;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-right: 1px solid #F3F3F3;
+}
+
+.slc-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/**
+ * カードコンテンツ
+ */
+.slc-card__content {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+/**
+ * カードタイトル・説明共通（切り詰めスタイル）
+ */
+.slc-card__title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+/**
+ * カードタイトル
+ */
+.slc-card__title {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: bold;
+    line-height: 1.6;
+    color: var(--slc-title-color);
+    -webkit-line-clamp: 2;
+}
+
+/**
+ * カード説明
+ */
+.slc-card__description {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: #999999;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/**
+ * サイト情報（ファビコン + ドメイン）
+ */
+.slc-card__site {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: var(--slc-site-color);
+}
+
+.slc-card__favicon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border: 1px solid #dddddd;
+    border-radius: 2px;
+}
+
+.slc-card__domain {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+ * 画像なし時のスタイル
+ */
+.slc-card--no-image .slc-card__title {
+    -webkit-line-clamp: 3;
+}
+
+/**
+ * 画像右配置時のスタイル
+ */
+.slc-card--image-right {
+    flex-direction: row-reverse;
+}
+
+.slc-card--image-right .slc-card__image {
+    border-right: none;
+    border-left: 1px solid #F3F3F3;
+}
+
+/**
+ * レスポンシブ対応
+ */
+@media (max-width: 768px) {
+    .slc-card {
+        flex-direction: column;
+    }
+
+    .slc-card__image {
+        flex: none;
+        min-width: auto;
+        width: 100%;
+        height: 160px;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid #F3F3F3;
+    }
+
+    .slc-card__content {
+        padding: 0.875rem;
+    }
+
+    .slc-card__title {
+        font-size: 0.875rem;
+    }
+
+    .slc-card__description {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slc-card {
+        min-height: auto;
+    }
+
+    .slc-card__image {
+        height: 160px;
+    }
+
+    .slc-card__title {
+        font-size: 0.8125rem;
+    }
+
+    .slc-card__description {
+        font-size: 0.75rem;
+    }
+}

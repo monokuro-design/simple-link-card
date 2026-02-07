@@ -1,0 +1,16 @@
+.git
+.gitattributes
+.gitignore
+.distignore
+.DS_Store
+.wordpress-org
+.phpunit.cache
+.phpunit.result.cache
+CODE_REVIEW.md
+composer.json
+composer.lock
+phpunit.xml
+phpunit.xml.bak
+scripts
+tests
+vendor
