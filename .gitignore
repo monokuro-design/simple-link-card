@@ -1,0 +1,27 @@
+# Development files
+.claude/
+.DS_Store
+*.log
+
+# Screenshots readme (not needed for distribution)
+assets/screenshots/README.md
+
+# Code review (internal only)
+CODE_REVIEW.md
+
+# PHPUnit/Composer cache
+.phpunit.cache/
+.phpunit.result.cache
+phpunit.xml.bak
+
+# Local development dependencies
+vendor/
+
+# Local environment and editor files
+.env
+.env.*
+.idea/
+.vscode/
+*.swp
+*.tmp
+node_modules/

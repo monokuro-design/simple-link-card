@@ -1,0 +1,15 @@
+/.gitattributes export-ignore
+/.distignore export-ignore
+/.gitignore export-ignore
+/.claude export-ignore
+/.phpunit.cache export-ignore
+/.phpunit.result.cache export-ignore
+/.wordpress-org export-ignore
+/CODE_REVIEW.md export-ignore
+/composer.json export-ignore
+/composer.lock export-ignore
+/phpunit.xml export-ignore
+/phpunit.xml.bak export-ignore
+/scripts export-ignore
+/tests export-ignore
+/vendor export-ignore
